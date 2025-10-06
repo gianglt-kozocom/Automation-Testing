@@ -1,7 +1,7 @@
 import { test, expect, APIRequestContext, Page } from '@playwright/test';
 import { createCustomerForm, checkProfile, addInforCustomer} from '../utils/uiEC.ts';
 import { confirmAccount, verifyCode, registerPassword, getMe, loginEC, loginInviteUI } from '../utils/ECAuth.ts';
-import { loginBpaaS, createCustomer, updateCustomer, getURLRegistered } from '../utils/BpaaS.ts';
+import { loginBpaaS, createCustomer, updateCustomer, getURLRegistered } from '../utils/bpaas.ts';
 import { extractHashIdFromUrl } from '../utils/helpers.ts';
 import { testData } from "../data/testData";
 
