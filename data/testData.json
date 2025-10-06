@@ -1,0 +1,25 @@
+{
+  "config": {
+    "baseURL_ec": "https://dev02.ec-vegekul.scoregre.com/",
+    "baseURL_bpaas": "https://dev02.bpaas-vegekul.scoregre.com/",
+    "apiEC": "https://api.dev02.ec-vegekul.scoregre.com",
+    "apiBpaaS": "https://api.dev02.bpaas-vegekul.scoregre.com"
+  },
+  "accountExisted": {
+    "username": "Giang1",
+    "email_account": "pamstaff122@gmail.com",
+    "password": "Test123@",
+    "cellphone": "09876543210"
+  },
+  
+  "settingPassword": {
+    "password": "Test123@",
+    "confirm_password": "Test123@",
+    "reset_password": "Test123@edit",
+    "confirm_reset_password": "Test123@edit"
+  },
+  "textDefault":{
+    "login":"このメールアドレスは既にアカウントが登録されています。 新しい店舗を追加したい場合は、ログイン後、「アカウント設定」画面より店舗を追加してください。"
+
+  }
+}
