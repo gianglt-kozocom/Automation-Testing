@@ -84,8 +84,8 @@ export async function getMe(request: APIRequestContext, baseUrl: string, token: 
 
 export async function loginEC(page: Page, email: string, password: string) {
   await page.goto("https://dev02.ec-vegekul.scoregre.com/login");
-  await page.fill('#email',email);               // Nhập password
-  await page.fill('#password',password);  // Nhập confirm password
+  await page.fill('#email',email);             
+  await page.fill('#password',password);  
   const [regResp] = await Promise.all([
     page.waitForResponse(resp =>
       resp.url().includes('/api/v1/auth/login') && resp.status() === 200

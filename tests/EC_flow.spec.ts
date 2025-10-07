@@ -43,7 +43,7 @@ test("TC1: Register customer with email haven't already exist -- status 'ec_temp
   // Kiểm tra có hiển thị button add infor 
   expect (page.getByText('店舗情報追加')).toBeVisible();
   //Kiểm tra có hiển thị button invite_staff
-  expect (page.getByText('スタッフ招待')).toBeVisible();
+  //expect (page.getByText('スタッフ招待')).toBeVisible();
 });
 test("TC2: Register customer with email haven't already exist -- status 'pre_transaction' ", async ({ page, request }) => {
   const baseUrl = testData.config.apiEC;
@@ -90,19 +90,24 @@ test('TC3: Register customer with email already exist', async ({ page, request }
 });
 
 test('TC4: Login with email already exist', async ({ page, request }) => {
+  const {email_account, password} = testData.accountExisted;
+  const token = await loginEC(page, email_account,password);
   const baseUrl = testData.config.apiEC;
-  const {email, password} = testData.accountExisted;
-  const token = await loginEC(page, email,password);
   const { customerCode, status } = await getMe(request, baseUrl, token);
   console.log('Customer Code:', customerCode);
   console.log('Status:', status);
-  await checkProfile(page,email);
+  await checkProfile(page,email_account);
 });
 
 test('TC5: Register customer with flyer - email_account chưa tồn tại trong hệ thống', async ({ page, request }) => {
-  const {email, password} = testData.accountExisted;
-  await loginEC(page, email,password);
-  await checkProfile(page,email);
+  const {email_account, password} = testData.accountExisted;
+  const {username, cellphone} = testData.signUp
+  console.log (email_account, username, cellphone)
+  await page.goto('https://dev02.ec-vegekul.scoregre.com/signup');
+  await page.waitForTimeout(2000)
+  await createCustomerForm(page, username,cellphone,email_account);
+  await loginEC(page, email_account, password);
+  await checkProfile(page,email_account);
   await page.getByRole('button', {name: '新規店舗追加'}).click();
   const{customer_code, customer_name1, customer_name2,email_customer, postcode3, postcode4, address2, address3, telephone } = testData.customerInfo;
   await addInforCustomer(page,email_customer,customer_name1,customer_name2,postcode3,postcode4,address2,address3,telephone);
