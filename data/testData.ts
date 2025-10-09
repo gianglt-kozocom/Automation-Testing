@@ -11,7 +11,7 @@ function generateDynamicData() {
     signUp: {
       username: `Pam_${Date.now()}`,
       cellphone: `09876543210`,
-      email: `pam_customer_${Date.now()}@gmail.com`
+      email: `pam_customer_${Date.now()}_${Math.floor(Math.random() * 1000)}@gmail.com`
     },
 
     customerInfo: {
