@@ -26,7 +26,7 @@ function generateDynamicData() {
     },
 
     bpaaSNewCustomer: {
-      customer_code: `123${Math.floor(10 + Math.random() * 90)}`,
+      // customer_code: `123${Math.floor(10 + Math.random() * 90)}`,
       customer_name2: "Pam Test",
       email: `bpaas_${Date.now()}@gmail.com`,
       postal_code: "1000005",
