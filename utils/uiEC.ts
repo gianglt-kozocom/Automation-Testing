@@ -1,6 +1,7 @@
 import { Page, expect } from '@playwright/test';
 
-export async function createCustomerForm(page, username, cellphone, email) { // Mở trang đăng ký
+export async function createCustomerForm(page, username, cellphone, email) { 
+  await page.waitForSelector('#username', { timeout: 60000 });// Mở trang đăng ký
   await page.fill('#username', username);          // Nhập tên
   await page.fill('#cellphone', cellphone);        // Nhập số điện thoại
   await page.fill('#email', email);                // Nhập email
