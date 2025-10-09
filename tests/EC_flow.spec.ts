@@ -279,27 +279,27 @@ test ('TC6_1: Register customer with flyer - email_account đã tồn tại tron
     await page.waitForTimeout(1000);
 });
 
-test ('TC7: get URL' , async ({page, request})=>{
-    const baseUrl = 'https://api.dev02.ec-vegekul.scoregre.com';
-    const token = await loginBpaaS(page,baseUrl, request);
-    console.log(token);
-  //   const id = 297;
-  //   const res = await request.get(`${baseUrl}/api/v1/master-data/customers/url-login-ec/${id}`, {
-  //   headers: {
-  //   Authorization: `Bearer ${token}`, // nếu cần
-  // },
-  //   });
-  //   const data = await res.json();
-  //   console.log('Flyer URL:', data);
-  //   if (!data.ec_url_login) {
-  //     throw new Error('Failed to get flyer URL from API');
-  //   }
-  //   const URL = data.ec_url_login;
-  //   await page.goto(URL); 
-  //   await page.waitForTimeout(2000);  
+// test ('TC7: get URL' , async ({page, request})=>{
+//     const baseUrl = 'https://api.dev02.ec-vegekul.scoregre.com';
+//     const token = await loginBpaaS(page,baseUrl, request);
+//     console.log(token);
+//   //   const id = 297;
+//   //   const res = await request.get(`${baseUrl}/api/v1/master-data/customers/url-login-ec/${id}`, {
+//   //   headers: {
+//   //   Authorization: `Bearer ${token}`, // nếu cần
+//   // },
+//   //   });
+//   //   const data = await res.json();
+//   //   console.log('Flyer URL:', data);
+//   //   if (!data.ec_url_login) {
+//   //     throw new Error('Failed to get flyer URL from API');
+//   //   }
+//   //   const URL = data.ec_url_login;
+//   //   await page.goto(URL); 
+//   //   await page.waitForTimeout(2000);  
     
-});
-test ('TC8: get URL' , async ({page, request})=> {
- const {username,email_account,cellphone} = testData.accountExisted;
-console.log(username,email_account,cellphone)})
+// });
+// test ('TC8: get URL' , async ({page, request})=> {
+//  const {username,email_account,cellphone} = testData.accountExisted;
+// console.log(username,email_account,cellphone)})
 
